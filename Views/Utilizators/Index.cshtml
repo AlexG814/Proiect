@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PoliceApp.Models.Utilizator>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Parola)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipUtilizator)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parola)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipUtilizator)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UtilizatorId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UtilizatorId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UtilizatorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

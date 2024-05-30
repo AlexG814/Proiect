@@ -1,0 +1,39 @@
+﻿@model PoliceApp.Models.Caz
+
+@{
+    ViewData["Title"] = "Sterge Caz";
+}
+
+<h1>Închide Caz</h1>
+
+<h3>Ești sigur că vrei să închizi acest caz?</h3>
+<div>
+    <h4>Caz</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Descriere)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Descriere)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stadiu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stadiu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prioritate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prioritate)
+        </dd>
+    </dl>
+
+    <form asp-action="Închide">
+        <input type="hidden" asp-for="CazId" />
+        <input type="submit" value="Închide" class="btn btn-danger" /> |
+        <a asp-action="Index">Renunță</a>
+    </form>
+</div>

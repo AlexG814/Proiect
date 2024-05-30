@@ -1,0 +1,29 @@
+﻿@model PoliceApp.Models.Comentariu
+
+@{
+    ViewData["Title"] = "Adauga Comentariu";
+}
+
+<h1>Adauga Comentariu</h1>
+
+<h4>Comentariu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AdaugaComentariu">
+            <input type="hidden" asp-for="CazId" value="@ViewBag.CazId" />
+            <div class="form-group">
+                <label asp-for="Continut" class="control-label"></label>
+                <textarea asp-for="Continut" class="form-control"></textarea>
+                <span asp-validation-for="Continut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Details" asp-route-id="@ViewBag.CazId">Back to Case</a>
+</div>

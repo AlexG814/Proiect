@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "Inspectoratul de Poliție";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PoliceApp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        h1{
+            color: white;
+        }
+
+
+        h2.{
+            color: #001f3f;
+        }
+
+        .header {
+            background-color: #001f3f;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            border-bottom: 2px solid #001f3f;
+            padding-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            background-color: #001f3f;
+            border-color: #001f3f;
+        }
+
+        .btn-secondary {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: #333;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            background-color: #001f3f;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #001f3f;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Inspectoratul de Poliție</h1>
+        <h1>Protejăm și Servim Comunitatea</h1>
+    </div>
+    <div class="container mt-4">
+        <h2 class="section-title">Despre Noi</h2>
+        <p>Inspectoratul de Poliție se dedică asigurării siguranței și securității comunității noastre prin aplicarea legii și protejarea drepturilor cetățenilor. Echipa noastră este formată din ofițeri și personal de suport dedicați, care lucrează neîncetat pentru a menține ordinea și a răspunde nevoilor comunității.</p>
+
+        <h2 class="section-title">Serviciile Noastre</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Patrulare</h5>
+                        <p class="card-text">Echipele noastre de patrulare sunt prezente în comunitate pentru a preveni infracțiunile și pentru a răspunde rapid la incidente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Investigații Criminale</h5>
+                        <p class="card-text">Departamentul nostru de investigații se ocupă de cazurile complexe și de aducerea infractorilor în fața justiției.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Relații cu Comunitatea</h5>
+                        <p class="card-text">Organizăm evenimente și programe educaționale pentru a construi o relație de încredere între poliție și cetățeni.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-info">
+            <p><strong>Adresă:</strong> Strada Principală, Nr. 123, Oraș</p>
+            <p><strong>Telefon:</strong> 021 123 4567</p>
+            <p><strong>Email:</strong> contact@policeapp.ro</p>
+            <a class="btn btn-secondary" href="mailto:contact@policeapp.ro">Trimite un Email</a>
+        </div>
+    </div>
+   
+</body>
+</html>

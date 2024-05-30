@@ -1,0 +1,104 @@
+﻿@model IEnumerable<PoliceApp.Models.Caz>
+
+@{
+    ViewData["Title"] = "Arhiva Cazuri";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PoliceApp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        h1 {
+            color: #001f3f;
+            border-bottom: 2px solid #001f3f;
+            padding-bottom: 10px;
+        }
+
+        .btn-primary {
+            background-color: #001f3f;
+            border-color: #001f3f;
+        }
+
+        .btn-link {
+            color: #dc3545;
+        }
+
+        .table thead {
+            background-color: #001f3f;
+            color: white;
+        }
+
+        .table tbody tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            background-color: #ffc107;
+            color: #333;
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Arhiva Cazuri</h1>
+        <form method="get" class="search-bar">
+            <div class="input-group">
+                <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control" placeholder="Cauta cazuri arhivate" />
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Cauta</button>
+                </div>
+            </div>
+        </form>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descriere)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Prioritate)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descriere)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Prioritate)
+                        </td>
+                        <td>
+                            <form asp-action="DeletePermanent" asp-route-id="@item.CazId" method="post" onsubmit="return confirm('Ești sigur că vrei să ștergi definitiv acest caz?');">
+                                <button type="submit" class="btn btn-danger">Șterge definitiv</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
